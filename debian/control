@@ -1,0 +1,76 @@
+Source: libgudev
+Section: libs
+Priority: optional
+Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+Uploaders: Michael Biebl <biebl@debian.org>,
+           Martin Pitt <mpitt@debian.org>
+Standards-Version: 3.9.6
+Vcs-Git: git://anonscm.debian.org/collab-maint/libgudev.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libgudev.git
+Homepage: https://wiki.gnome.org/Projects/libgudev
+Build-Depends: debhelper (>= 9),
+               pkg-config,
+               gtk-doc-tools,
+               dh-autoreconf,
+               automake (>= 1.11),
+               autoconf (>= 2.64),
+               libglib2.0-dev (>= 2.22.0),
+               libudev-dev (>= 199),
+               libgirepository1.0-dev (>= 1.31.1),
+               gobject-introspection (>= 1.31.1),
+               libglib2.0-doc
+
+Package: libgudev-1.0-0
+Section: libs
+Priority: optional
+Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: GObject-based wrapper library for libudev
+ This library makes it much simpler to use libudev from programs already using
+ GObject. It also makes it possible to easily use libudev from other
+ programming languages, such as Javascript, because of GObject introspection
+ support.
+
+Package: gir1.2-gudev-1.0
+Section: introspection
+Priority: optional
+Architecture: linux-any
+Multi-arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         ${gir:Depends}
+Description: libgudev-1.0 introspection data
+ This package contains the GObject-introspection data of libgudev-1.0 in
+ binary typelib format.
+
+Package: libgudev-1.0-dev
+Section: libdevel
+Priority: optional
+Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libgudev-1.0-0 (= ${binary:Version}),
+         gir1.2-gudev-1.0 (= ${binary:Version}),
+         libglib2.0-dev,
+         pkg-config
+Description: libgudev-1.0 development files
+ This package contains the files needed for developing applications that
+ use libgudev-1.0.
+
+Package: libgudev-1.0-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         libgudev-1.0-0 (= ${binary:Version}),
+Description: libgudev-1.0 debugging symbols
+ This package contains the debugging symbols for libgudev-1.0.

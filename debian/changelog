@@ -1,0 +1,34 @@
+libgudev (230-2) unstable; urgency=medium
+
+  [ Martin Pitt ]
+  * Bump epoch for -dbg package for Ubuntu build as well, to make it
+    installable.
+
+  [ Michael Biebl ]
+  * Drop our hack to override the linker on sparc. This was copied over from
+    the systemd split but it is no longer necessary as the libgudev build
+    system does not override the default linker.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 28 Jun 2015 12:25:00 +0200
+
+libgudev (230-1) unstable; urgency=medium
+
+  * Add a watch file to track new upstream releases.
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 04 Jun 2015 03:20:10 +0200
+
+libgudev (219-12) unstable; urgency=medium
+
+  * Properly switch from doc symlinks to directories on upgrades.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 29 May 2015 10:12:40 +0200
+
+libgudev (219-11) unstable; urgency=medium
+
+  * Initial release after the split from src:systemd. We use the version
+    number 219-11, since 219-10 was the last version where it was built from
+    src:systemd. See also the upstream announcement at
+    http://lists.freedesktop.org/archives/systemd-devel/2015-May/032070.html
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 29 May 2015 08:18:56 +0200
